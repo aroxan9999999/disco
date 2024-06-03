@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Year Countdown</title>
+    <meta name="description" content="Trendset Page under construction">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold">
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <style>
+        body {
+            font-family: 'PT Sans Narrow', sans-serif;
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364); /* Gradient background */
+            position: relative; /* Set the body as a relative container */
+        }
+
+        #Header {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        #Header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        #Content {
+            top: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .countdown.styled {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .countdown.styled div {
+            margin: 5px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .intro {
+            margin: 20px;
+            text-align: center;
+        }
+
+        #subscribe {
+            margin: 20px;
+            text-align: center;
+        }
+
+        #subscribe input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            margin: 10px;
+        }
+
+        #subscribe input[type="button"] {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 10px;
+            background: #fda085;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        #socialIcons ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        #socialIcons li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .tempBy {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            text-align: center;
+            margin: 20px;
+        }
+
+        #snowCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="snowCanvas"></canvas>
+    <div id="Header">
+        <div class="wrapper">
+            <h1>New year countdown!</h1>
+        </div>
+    </div>
+    <div id="Content" class="wrapper">
+        <div class="countdown styled">
+            <div id="days" style="height: 50px;">
+                <div>
+                    <span>Days</span>
+                </div>
+            </div>
+            <div id="hours" style="height: 60px;">
+                <div>
+                    <span>Hrs</span>
+                </div>
+            </div>
+            <div id="minutes" style="height: 70px;">
+                <div>
+                    <span>Min</span>
+                </div>
+            </div>
+            <div id="seconds" style="height: 80px;">
+                <div>
+                    <span>Sec</span>
+                </div>
+            </div>
+        </div>
+        <h2 class="intro">We're working hard to improve our website and we'll be back soon. Stay tuned for something amazing!<br/>Subscribe to be notified.</h2>
+        <div id="subscribe">
+            <form action="" method="post" onsubmit="">
+                <p><input name="" value="Enter your e-mail" type="text" id=""/>
+                    <input type="button" value="Submit" disabled="disabled"/></p>
+            </form>
+            <div id="socialIcons">
+                <ul>
+                    <li><a href="" title="Twitter" class="twitterIcon"></a></li>
+                    <li><a href="" title="Facebook" class="facebookIcon"></a></li>
+                    <li><a href="" title="LinkedIn" class="linkedInIcon"></a></li>
+                    <li><a href="" title="Pinterest" class="pinterestIcon"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="/static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/backstretch.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.countdown.js"></script>
+    <script type="text/javascript" src="/static/js/global.js"></script>
+    <script type="text/javascript" src="/static/js/snowstorm.js"></script>
+    <script>
+        $(function() {
+            $('.countdown').countdown({
+                date: "June 7, 2087 15:03:26"
+            });
+        });
+    </script>
+
+</body>
+</html>
